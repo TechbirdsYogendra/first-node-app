@@ -3,10 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Contact Us</h1>
-    <p>This is the contact page.</p>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>About Me</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>About Me</h2>
+            <p>Hello! My name is Yogendra Singh. I am a software developer with a passion for creating web applications and learning new technologies. I have experience in various programming languages and frameworks, and I enjoy solving complex problems and working on challenging projects.</p>
+            <p>In my free time, I like to read books, explore new places, and spend time with my family and friends. I am always eager to learn and grow, both personally and professionally.</p>
+            <h3>Skills</h3>
+            <ul>
+                <li>JavaScript</li>
+                <li>Node.js</li>
+                <li>React</li>
+                <li>HTML & CSS</li>
+                <li>Python</li>
+            </ul>
+            <h3>Contact</h3>
+            <p>If you would like to get in touch, feel free to <a href="/contact">contact me</a>.</p>
+        </div>
+    </div>
 </body>
 </html>

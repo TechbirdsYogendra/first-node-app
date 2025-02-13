@@ -4,9 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>About Us</h1>
-    <p>This is the about page.</p>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>About Us</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>About Us</h2>
+            <p>Welcome to our company! We are a team of passionate individuals dedicated to delivering high-quality software solutions. Our mission is to help businesses achieve their goals through innovative technology and exceptional service.</p>
+            <p>Our team has a diverse set of skills and expertise, allowing us to tackle a wide range of projects and challenges. We believe in continuous learning and improvement, and we strive to stay at the forefront of the industry.</p>
+            <h3>Our Values</h3>
+            <ul>
+                <li>Integrity</li>
+                <li>Innovation</li>
+                <li>Excellence</li>
+                <li>Collaboration</li>
+                <li>Customer Satisfaction</li>
+            </ul>
+            <h3>Our Team</h3>
+            <p>We are proud of our talented and dedicated team members who work tirelessly to deliver the best results for our clients. Each team member brings unique skills and perspectives, making us stronger as a whole.</p>
+            <h3>Contact Us</h3>
+            <p>If you would like to learn more about our services or discuss a potential project, please <a href="/contact">contact us</a>. We look forward to hearing from you!</p>
+        </div>
+    </div>
 </body>
 </html>

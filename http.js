@@ -39,6 +39,10 @@ const server = http.createServer((req, res) => {
                 res.end();
             }
         });
+    } else if (req.url === '/apis/getcourses') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.write(JSON.stringify(['Node.js', 'React', 'Angular', 'Vue']));
+        res.end();
     } else {
         res.writeHead(404, { 'Content-Type': 'text/html' });
         res.write('<h1>404 Not Found</h1>');

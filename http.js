@@ -2,52 +2,72 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 
+const handleHomePage = (_req, res) => {
+    fs.readFile(path.join(__dirname, 'index.html'), (err, data) => {
+        if (err) {
+            res.writeHead(500, { 'Content-Type': 'text/html' });
+            res.write('<h1>500 Internal Server Error</h1>');
+            res.end();
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write(data);
+            res.end();
+        }
+    });
+};
+
+const handleAboutPage = (_req, res) => {
+    fs.readFile(path.join(__dirname, 'about.html'), (err, data) => {
+        if (err) {
+            res.writeHead(500, { 'Content-Type': 'text/html' });
+            res.write('<h1>500 Internal Server Error</h1>');
+            res.end();
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write(data);
+            res.end();
+        }
+    });
+};
+
+const handleContactPage = (_req, res) => {
+    fs.readFile(path.join(__dirname, 'contact.html'), (err, data) => {
+        if (err) {
+            res.writeHead(500, { 'Content-Type': 'text/html' });
+            res.write('<h1>500 Internal Server Error</h1>');
+            res.end();
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write(data);
+            res.end();
+        }
+    });
+};
+
+const handleGetCourses = (_req, res) => {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.write(JSON.stringify(['Node.js', 'React', 'Angular', 'Vue']));
+    res.end();
+};
+
+const handleNotFound = (_req, res) => {
+    res.writeHead(404, { 'Content-Type': 'text/html' });
+    res.write('<h1>404 Not Found</h1>');
+    res.write('<p>The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>');
+    res.end();
+};
+
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
-        fs.readFile(path.join('index.html'), (err, data) => {
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/html' });
-                res.write('<h1>500 Internal Server Error</h1>');
-                res.end();
-            } else {
-                res.writeHead(200, { 'Content-Type': 'text/html' });
-                res.write(data);
-                res.end();
-            }
-        });
+        handleHomePage(req, res);
     } else if (req.url === '/about') {
-        fs.readFile(path.join('about.html'), (err, data) => {
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/html' });
-                res.write('<h1>500 Internal Server Error</h1>');
-                res.end();
-            } else {
-                res.writeHead(200, { 'Content-Type': 'text/html' });
-                res.write(data);
-                res.end();
-            }
-        });
+        handleAboutPage(req, res);
     } else if (req.url === '/contact') {
-        fs.readFile(path.join('contact.html'), (err, data) => {
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/html' });
-                res.write('<h1>500 Internal Server Error</h1>');
-                res.end();
-            } else {
-                res.writeHead(200, { 'Content-Type': 'text/html' });
-                res.write(data);
-                res.end();
-            }
-        });
+        handleContactPage(req, res);
     } else if (req.url === '/apis/getcourses') {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.write(JSON.stringify(['Node.js', 'React', 'Angular', 'Vue']));
-        res.end();
+        handleGetCourses(req, res);
     } else {
-        res.writeHead(404, { 'Content-Type': 'text/html' });
-        res.write('<h1>404 Not Found</h1>');
-        res.write('<p>The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>');
-        res.end();
+        handleNotFound(req, res);
     }
 });
 

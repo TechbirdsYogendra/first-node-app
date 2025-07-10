@@ -7,3 +7,4 @@ class Logger extends EventEmitter {
 }
 
 export default Logger;
+export const logger = new Logger();
